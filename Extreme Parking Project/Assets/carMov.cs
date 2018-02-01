@@ -15,10 +15,15 @@ public class carMov : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (KeyCode.UpArrow)) {
 			if (playerRigid.velocity.magnitude < 10) {
-				playerRigid.AddRelativeForce (Vector3.forward * 50); //for local forward
+                playerRigid.AddForce(0,0, 500 * Time.deltaTime); //for local forward
 			}
 
 		}
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+
+            playerRigid.AddForce(0, 0,-500 * Time.deltaTime); //for local forward
+        }
 		if (Input.GetKey (KeyCode.RightArrow)) {
 			player.transform.Rotate (0, 2, 0);
 		}
