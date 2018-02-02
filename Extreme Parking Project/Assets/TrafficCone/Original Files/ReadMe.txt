@@ -1,0 +1,2 @@
+Enjoy this free model, a good rating would be highly appreciated, as it will help me in future when I decide to sell some of my more high quality models. 
+Please refer to 'Contact.txt' if you are interested in my work, or have enquires or requests/commisions.
