@@ -31,15 +31,20 @@ public class UIscript : MonoBehaviour {
         cam.transform.position = new Vector3(40, 15, -97);
         cam.transform.eulerAngles = new Vector3(90, 90, 0);
         back.gameObject.SetActive(true);
-        FindObjectOfType<instantiatecars>().createcar();
+
     
              
 
     }
     public void backpressed()
     {
+		FindObjectOfType<instantiatecars>().createcar();
+
         back.gameObject.SetActive(false);
-        cam.transform.position = new Vector3(57, 3, -20);
-        cam.transform.eulerAngles = new Vector3(175, 104, -176);
-    }
+//        cam.transform.position = new Vector3(57, 3, -20);
+//        cam.transform.eulerAngles = new Vector3(175, 104, -176);
+	
+		cam.GetComponent<followplayer>().enabled = true;
+
+	}
 }

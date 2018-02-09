@@ -4,28 +4,31 @@ using UnityEngine;
 
 using UnityStandardAssets.Vehicles.Car;
 
-public class carEnter : MonoBehaviour {
-
-	public GameObject car;
+public class AI_Manager : MonoBehaviour {
+	
 	CarAIControl ai;
 	CarUserControl user;
-	CarController control;
+	//CarController control;
 
 	// Use this for initialization
 	void Start () {
-		user = car.GetComponent <CarUserControl>();
-		ai = car.GetComponent <CarAIControl>();
-		control = car.GetComponent<CarController> ();
+		user = GetComponent <CarUserControl>();
+		ai = GetComponent <CarAIControl>();
+		ai.SetTarget (GameObject.Find("AI_Target").transform);
+
+		//control = car.GetComponent<CarController> ();
 
 		user.enabled = false;
 		ai.enabled = true;
 
+
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (!ai.isDriving() ) {
-			
+
 			user.enabled = true;
 			ai.enabled = false;
 

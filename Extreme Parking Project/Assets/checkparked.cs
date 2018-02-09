@@ -34,7 +34,7 @@ public class checkparked : MonoBehaviour {
 	public void fronttrue()
 	{
 		front = true;
-		print("frot true");
+//		print("frot true");
 	}
 	public void backtrue()
 	{
@@ -44,7 +44,7 @@ public class checkparked : MonoBehaviour {
 	public void frontfalse()
 	{
 		front = false;
-		print("frot fas");
+//		print("frot fas");
 	}
 	public void backfalse()
 	{

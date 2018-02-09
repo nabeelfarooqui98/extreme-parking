@@ -6,6 +6,7 @@ public class instantiatecars : MonoBehaviour {
 
     public GameObject car1;
     public GameObject carcopy;
+	public Camera cam;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,5 +20,6 @@ public class instantiatecars : MonoBehaviour {
     {
         print("car is created");
         carcopy = (GameObject)Instantiate(car1,new Vector3(39.5f,0f,73f), Quaternion.Euler(0,180,0));
+		cam.GetComponent<followplayer> ().player = carcopy;
     }
 }
