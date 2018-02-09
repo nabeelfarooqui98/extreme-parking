@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //using UnityEngine.Halo;
 
  
@@ -8,7 +9,7 @@ public class checkparked : MonoBehaviour {
 
 	bool front=false;
 	bool back =false;
-
+    public Button exit;
 	public Behaviour halo;	
 
 
@@ -21,9 +22,12 @@ public class checkparked : MonoBehaviour {
 	void Update () {
 		if (front && back) {
 			print ("okok");
+            exit.gameObject.SetActive(true);
+            
 			halo.enabled = false;
 		} else {
 			halo.enabled = true;
+            exit.gameObject.SetActive(false);
 		}
 	}
 
