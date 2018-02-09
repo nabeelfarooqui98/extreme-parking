@@ -9,11 +9,13 @@ public class carEnter : MonoBehaviour {
 	public GameObject car;
 	CarAIControl ai;
 	CarUserControl user;
+	CarController control;
 
 	// Use this for initialization
 	void Start () {
 		user = car.GetComponent <CarUserControl>();
 		ai = car.GetComponent <CarAIControl>();
+		control = car.GetComponent<CarController> ();
 
 		user.enabled = false;
 		ai.enabled = true;
@@ -22,7 +24,8 @@ public class carEnter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!ai.isDriving()) {
+		if (!ai.isDriving() ) {
+			
 			user.enabled = true;
 			ai.enabled = false;
 
