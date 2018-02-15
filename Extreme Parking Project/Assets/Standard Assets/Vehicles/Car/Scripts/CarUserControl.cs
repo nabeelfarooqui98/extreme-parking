@@ -15,7 +15,11 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             // get the car controller
             m_Car = GetComponent<CarController>();
+            print("awake"); 
+            //m_Car.Move(0, 0, 0, 1);
+
         }
+        
 
 
         private void FixedUpdate()

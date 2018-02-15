@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Car;
+
 public class UIscript : MonoBehaviour {
 
     public Button exit;
@@ -27,6 +29,10 @@ public class UIscript : MonoBehaviour {
        
        GameObject.Find("ParkingDectector").GetComponent<checkparked>().enabled = false;
        GameObject.Find("Main Camera").GetComponent<followplayer>().enabled = false;
+       
+       GameObject cur_car = FindObjectOfType<instantiatecars>().getcurrentcar();
+       cur_car.GetComponent<CarUserControl>().enabled = false;
+       
        exit.gameObject.SetActive(false);
         cam.transform.position = new Vector3(40, 15, -97);
         cam.transform.eulerAngles = new Vector3(90, 90, 0);
@@ -41,10 +47,11 @@ public class UIscript : MonoBehaviour {
 		FindObjectOfType<instantiatecars>().createcar();
 
         back.gameObject.SetActive(false);
-//        cam.transform.position = new Vector3(57, 3, -20);
-//        cam.transform.eulerAngles = new Vector3(175, 104, -176);
+        cam.transform.position = new Vector3(57, 3, -20);
+        cam.transform.eulerAngles = new Vector3(0  , -90, 0);
 	
-		cam.GetComponent<followplayer>().enabled = true;
+		//cam.GetComponent<followplayer>().enabled = true;
 
 	}
+
 }
