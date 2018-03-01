@@ -40,11 +40,11 @@ public class AI_Manager : MonoBehaviour
             if (!userKoDeti)
             {
                 control.Move(0, 0, 0, 1);
-                print(control.CurrentSpeed);
+//                print(control.CurrentSpeed);
                 if (control.CurrentSpeed < 0.01)
                 {
                     userKoDeti = true;
-                    user.enabled = true;
+                    //user.enabled = true;
                 }
 
 

@@ -7,20 +7,22 @@ using UnityEngine.UI;
  
 public class checkparked : MonoBehaviour {
 
+	bool bigBool=false;
 	bool front=false;
 	bool back =false;
     public Button exit;
-	public Behaviour halo;	
+	public Behaviour halo;
+	//bool userscript=false;
 
 
 	// Use this for initialization
 	void Start () {
-		halo.enabled = true;
+		//halo.enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (front && back) {
+		/*if (front && back) {
 			print ("okok");
             exit.gameObject.SetActive(true);
             
@@ -28,7 +30,13 @@ public class checkparked : MonoBehaviour {
 		} else {
 			halo.enabled = true;
             exit.gameObject.SetActive(false);
-		}
+		}*/
+/*		if (bigBool ) {
+			exit.gameObject.SetActive(true);
+		} else {
+				exit.gameObject.SetActive(false);
+	}
+*/
 	}
 
 	public void fronttrue()
@@ -50,5 +58,15 @@ public class checkparked : MonoBehaviour {
 	{
 		back = false;
 	}
+	public void bigTrue()
+	{
+		bigBool = true;
+	}
+	public void bigFalse()
+	{
+		bigBool = false;
+	}
+
+
 
 }

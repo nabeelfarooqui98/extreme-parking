@@ -27,10 +27,11 @@ public class UIscript : MonoBehaviour {
    public void exitpressed()
     {
        
-       GameObject.Find("ParkingDectector").GetComponent<checkparked>().enabled = false;
+       //GameObject.Find("ParkingDectector").GetComponent<checkparked>().enabled = false;
        GameObject.Find("Main Camera").GetComponent<followplayer>().enabled = false;
-       
-       GameObject cur_car = FindObjectOfType<instantiatecars>().getcurrentcar();
+		GameObject.Find("Main Camera").GetComponent<TouchToControl>().enabled = true;
+
+		GameObject cur_car =  Camera.main.GetComponent<TouchToControl>().lastTouchedCarRef();//FindObjectOfType<instantiatecars>().getcurrentcar();
        cur_car.GetComponent<CarUserControl>().enabled = false;
        
        exit.gameObject.SetActive(false);
@@ -44,13 +45,13 @@ public class UIscript : MonoBehaviour {
     }
     public void backpressed()
     {
+		print ("back pressed");
 		FindObjectOfType<instantiatecars>().createcar();
-
+		Camera.main.GetComponent<TouchToControl> ().enabled = true;
         back.gameObject.SetActive(false);
         cam.transform.position = new Vector3(57, 3, -20);
-        cam.transform.eulerAngles = new Vector3(0  , -90, 0);
+        cam.transform.eulerAngles = new Vector3(90  , -90, 0);
 	
-		//cam.GetComponent<followplayer>().enabled = true;
 
 	}
 
