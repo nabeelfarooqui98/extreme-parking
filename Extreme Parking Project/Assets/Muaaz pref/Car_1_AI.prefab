@@ -326,11 +326,12 @@ GameObject:
   - component: {fileID: 114118912197576214}
   - component: {fileID: 114538582135524062}
   - component: {fileID: 114405141975203708}
-  - component: {fileID: 114121942582784386}
   - component: {fileID: 114486433869932246}
+  - component: {fileID: 114100128474751890}
+  - component: {fileID: 122565166195857252}
   m_Layer: 0
   m_Name: Car_1_AI
-  m_TagString: Player
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1770,6 +1771,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114100128474751890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638356905368976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4255be743a770a1409d400de640d85e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114118912197576214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1793,58 +1805,6 @@ MonoBehaviour:
   maxRolloffDistance: 500
   dopplerLevel: 1
   useDoppler: 1
---- !u!114 &114121942582784386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1638356905368976}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114486433869932246}
-        m_MethodName: test
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114225552407791880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1919,6 +1879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36955485d8f75149add05d88c6ea140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exit: {fileID: 0}
 --- !u!114 &114514963041313816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2046,6 +2007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36955485d8f75149add05d88c6ea140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exit: {fileID: 0}
 --- !u!114 &114988720363587672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2059,6 +2021,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!122 &122565166195857252
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638356905368976}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280418048
+  m_Size: 6.58
 --- !u!146 &146186243231362706
 WheelCollider:
   m_ObjectHideFlags: 1

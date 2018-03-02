@@ -50,7 +50,7 @@ public class UIscript : MonoBehaviour {
 		Camera.main.GetComponent<TouchToControl> ().enabled = true;
         back.gameObject.SetActive(false);
         cam.transform.position = new Vector3(57, 3, -20);
-        cam.transform.eulerAngles = new Vector3(90  , -90, 0);
+        cam.transform.eulerAngles = new Vector3(0  , -90, 0);
 	
 
 	}

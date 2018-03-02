@@ -2,36 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
+using UnityEngine.UI;
+
 
 public class TouchToControl : MonoBehaviour {
 
 	RaycastHit hitInfo;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public Button exit;
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (Input.GetMouseButtonDown(0))
 		{
-//			Debug.Log("Mouse is down");
-
-
 
 			hitInfo = new RaycastHit();
 
 
 			bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
-			if (hit) 
+			if (hit && hitInfo.transform.gameObject.tag=="car") 
 			{
 				Debug.Log("Hit " + hitInfo.transform.gameObject.name);
 				GetComponent<TouchToControl> ().enabled = false;
 				GetComponent<followplayer> ().player = hitInfo.transform.gameObject;
 				GetComponent<followplayer> ().enabled = true;
 				hitInfo.transform.gameObject.GetComponent<CarUserControl> ().enabled = true;
+
+                
+                if (hitInfo.transform.position.z < -70)
+                {
+                    exit.gameObject.SetActive(true);
+                }
+
 
 			} else {
 //				Debug.Log("No hit");
