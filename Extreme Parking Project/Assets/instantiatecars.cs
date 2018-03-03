@@ -9,7 +9,7 @@ public class instantiatecars : MonoBehaviour {
     GameObject carcopy;
 	Camera cam;
     int numberofcars = 0;
-	int reqcar;
+	int reqcar =-1;
 
     List<GameObject> existingcars = new List<GameObject>();
 
@@ -20,7 +20,7 @@ public class instantiatecars : MonoBehaviour {
 	void Start () {
         createcar();
         cam = Camera.main;
-        reqcar = -1;
+      
         last = Time.time; 
 	}
 
