@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class receivecars : MonoBehaviour {
-    public Button exit;
+    public Button exit1;
     
 	// Use this for initialization
 	void Start () {
@@ -24,7 +24,7 @@ public class receivecars : MonoBehaviour {
            
             print(FindObjectOfType<instantiatecars>().getReqCar());
             if (col.GetComponentInParent<noplate>().getNum() == FindObjectOfType<instantiatecars>().getReqCar())
-            exit.gameObject.SetActive(true);
+            exit1.gameObject.SetActive(true);
             //AI on krni h if exit is pressed 
      
         }
@@ -33,7 +33,7 @@ public class receivecars : MonoBehaviour {
     {
         if (col.name == "ColliderBottom")
         {
-            exit.gameObject.SetActive(false);
+            exit1.gameObject.SetActive(false);
      
 
         }

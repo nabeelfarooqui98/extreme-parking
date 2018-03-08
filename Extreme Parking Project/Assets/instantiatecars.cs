@@ -61,15 +61,19 @@ public class instantiatecars : MonoBehaviour {
     public void askforcar()
     {
         reqcar = Random.Range(1, numberofcars+1);
+		print ("asking for car num: " + reqcar);
         for (int i = 0; i < numberofcars; i++)
         {
             if (existingcars[i].GetComponent<noplate>().getNum() == reqcar)
             {
                
                 Behaviour halo = (Behaviour)existingcars[i].GetComponent("Halo");
-                halo.enabled = true; // false 
+                halo.enabled = true; // false
+				return;
             }
         }
+
+		askforcar ();
             
     }
     public int getReqCar()

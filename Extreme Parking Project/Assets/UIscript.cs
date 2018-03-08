@@ -8,6 +8,9 @@ public class UIscript : MonoBehaviour {
 
     public Button exit;
     public Button back;
+	public Button plot;
+	public Button start;
+	public Button exit1;
     public Camera cam;
     
 	// Use this for initialization
@@ -54,5 +57,36 @@ public class UIscript : MonoBehaviour {
 	
 
 	}
+	public void Dropoff(){
+		exit1.gameObject.SetActive(false);
+		GameObject.Find("Main Camera").GetComponent<followplayer>().enabled = false;
+		GameObject.Find("Main Camera").GetComponent<TouchToControl>().enabled = true;
+		GameObject cur_car =  Camera.main.GetComponent<TouchToControl>().lastTouchedCarRef();
+		Destroy (cur_car);
+		start.gameObject.SetActive(true);
+		plot.gameObject.SetActive(true);
+
+	}
+
+	public void gotoplot(){
+		start.gameObject.SetActive(false);
+		plot.gameObject.SetActive(false);
+
+		cam.transform.position = new Vector3(40, 15, -97);
+		cam.transform.eulerAngles = new Vector3(90, 90, 0);
+
+
+	}
+
+	public void gotostart(){
+		start.gameObject.SetActive(false);
+		plot.gameObject.SetActive(false);
+
+		cam.transform.position = new Vector3(57, 3, -20);
+		cam.transform.eulerAngles = new Vector3(0  , -90, 0);
+
+
+	}
+
 
 }
