@@ -9,8 +9,15 @@ public class TouchToControl : MonoBehaviour {
 
 	RaycastHit hitInfo;
     public Button exit;
-	
+    public Button back;
+
 	// Update is called once per frame
+    void OnDisable()
+    {
+        if(back != null)
+        back.gameObject.SetActive(false);
+    }
+
 	void Update () {
 
 		if (Input.GetMouseButtonDown(0))

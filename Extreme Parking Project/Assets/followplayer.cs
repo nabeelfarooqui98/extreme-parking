@@ -6,7 +6,28 @@ public class followplayer : MonoBehaviour {
 
     public GameObject player;   ///har bar instantiate kr ne wala dena h func bana kr hojae ga baad ma dekhte hain 
     public Vector3 offset;
+    public float smooth = 5.0f;
+    private Vector3 point;
 
+    GameObject par;
+    Transform front;
+    Transform back;
+
+    void Start()
+    {//Set up things on the start method
+//        point = player.transform.position;//get target's coords
+ //       transform.LookAt(point);//makes the camera look to it 
+
+        
+    }
+
+    void OnEnable()
+    {
+        par = player.transform.Find("Colliders").gameObject;
+        back = par.transform.Find("ColliderBottom");
+        front = par.transform.Find("ColliderFront");
+    }
+    /*
 	//from net
 
 	// The distance in the x-z plane to the target
@@ -19,19 +40,39 @@ public class followplayer : MonoBehaviour {
 
 	// Place the script in the Camera-Control group in the component menu
 	[AddComponentMenu("Camera-Control/Smooth Follow")]
+    */
 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+	// original
+    
 	void Update () {
-		//transform.position = player.transform.position+offset;
-		//transform.rotation = Quaternion.Euler (0, 180, 0);
-	}
+        /*
+        par = player.transform.Find("Colliders").gameObject;
+        back = par.transform.Find("ColliderBottom");
+        front = par.transform.Find("ColliderFront");
+        */
+        Vector3 direction = front.position - back.position;
+        direction = direction.normalized;
 
+        
+        transform.position = player.transform.position + (-8 * direction);
+        transform.position += new Vector3(0,5,0);
+        
+        //transform.rotation = player.transform.rotation;
+        transform.LookAt(player.transform);
+        //transform.RotateAround(player.transform.position, new Vector3(0.0f, 1.0f, 0.0f), 20 * Time.deltaTime * 10f);
+
+
+
+
+
+    }
+    
+
+
+    
+    /*
+     * 
+     * // net1
 	void LateUpdate () {
 		// Early out if we don't have a target
 		if (!player.transform) return;
@@ -63,5 +104,12 @@ public class followplayer : MonoBehaviour {
 		// Always look at the target
 		transform.LookAt(player.transform);
 	}
+    */
 
+/*    void Update()
+    {
+        transform.position = Vector3.Lerp(
+            transform.position, player.transform.position+offset,
+            Time.deltaTime * smooth);
+    }*/ 
 }

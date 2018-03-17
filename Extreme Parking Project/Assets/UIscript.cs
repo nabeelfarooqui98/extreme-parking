@@ -62,7 +62,11 @@ public class UIscript : MonoBehaviour {
 		GameObject.Find("Main Camera").GetComponent<followplayer>().enabled = false;
 		GameObject.Find("Main Camera").GetComponent<TouchToControl>().enabled = true;
 		GameObject cur_car =  Camera.main.GetComponent<TouchToControl>().lastTouchedCarRef();
-		Destroy (cur_car);
+        int x= cur_car.GetComponent<noplate>().getNum();
+        instantiatecars y=GameObject.Find("CarMaker").GetComponent<instantiatecars>();
+        y.deleteno(x);
+        y.deleteexitscar(cur_car);
+        Destroy (cur_car);
 		start.gameObject.SetActive(true);
 		plot.gameObject.SetActive(true);
 
@@ -71,7 +75,7 @@ public class UIscript : MonoBehaviour {
 	public void gotoplot(){
 		start.gameObject.SetActive(false);
 		plot.gameObject.SetActive(false);
-
+        back.gameObject.SetActive(true);
 		cam.transform.position = new Vector3(40, 15, -97);
 		cam.transform.eulerAngles = new Vector3(90, 90, 0);
 
@@ -81,6 +85,8 @@ public class UIscript : MonoBehaviour {
 	public void gotostart(){
 		start.gameObject.SetActive(false);
 		plot.gameObject.SetActive(false);
+        FindObjectOfType<instantiatecars>().createcar();
+        Camera.main.GetComponent<TouchToControl>().enabled = true;
 
 		cam.transform.position = new Vector3(57, 3, -20);
 		cam.transform.eulerAngles = new Vector3(0  , -90, 0);
