@@ -10,6 +10,7 @@ public class TouchToControl : MonoBehaviour {
 	RaycastHit hitInfo;
     public Button exit;
     public Button back;
+	public Text carhealth;
 
 	// Update is called once per frame
     void OnDisable()
@@ -34,7 +35,8 @@ public class TouchToControl : MonoBehaviour {
 				GetComponent<followplayer> ().player = hitInfo.transform.gameObject;
 				GetComponent<followplayer> ().enabled = true;
 				hitInfo.transform.gameObject.GetComponent<CarUserControl> ().enabled = true;
-
+				carhealth.gameObject.SetActive(true);
+				carhealth.text = hitInfo.transform.gameObject.GetComponent<noplate> ().gethealth ().ToString ();
                 
                 if (hitInfo.transform.position.z < -70)
                 {

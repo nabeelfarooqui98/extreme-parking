@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 33970715745733830}
   - component: {fileID: 65549929877819024}
   - component: {fileID: 23018012090827662}
+  - component: {fileID: 114093903062100776}
   m_Layer: 0
   m_Name: ColliderBottom
   m_TagString: Untagged
@@ -1771,6 +1772,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114093903062100776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172971733176728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feaa73828f30dde4b84a7ea7ad8a2fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114100128474751890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1782,6 +1794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4255be743a770a1409d400de640d85e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
 --- !u!114 &114118912197576214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1880,6 +1893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exit: {fileID: 0}
+  back: {fileID: 0}
+  carhealth: {fileID: 0}
 --- !u!114 &114514963041313816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2008,6 +2023,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exit: {fileID: 0}
+  back: {fileID: 0}
+  carhealth: {fileID: 0}
 --- !u!114 &114988720363587672
 MonoBehaviour:
   m_ObjectHideFlags: 1

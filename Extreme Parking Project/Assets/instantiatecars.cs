@@ -68,7 +68,7 @@ public class instantiatecars : MonoBehaviour {
     public void askforcar()
     {
         reqcar = Random.Range(0,noplatearray.Count);
-        print("before error " + reqcar);
+//        print("before error " + reqcar);
         reqcar = noplatearray[reqcar];
 		print ("asking for car num: " + reqcar);
         for (int i = 0; i < noplatearray.Count; i++)

@@ -12,21 +12,36 @@ public class UIscript : MonoBehaviour {
 	public Button start;
 	public Button exit1;
     public Camera cam;
+
+	public Text scoreText;
+	public Text timeText;
+	public Text carhealth;
     
+	int timeLeft;
+	int delay = 1;
+	float last;
+
+	int score;
+
 	// Use this for initialization
 	void Start () {
-        //Vector3 pL = new Vector3(40, 15, -97);  ///pl=parking lot
-        //Vector3 pLrot = new Vector3(90, 90, 0);  ///angle in pL
-        //Vector3 bul = new Vector3(57, 3, -20);  ///bul=building
-        //Vector3 bulrot = new Vector3(175, 104, -176);   ///angle in bul
-
-        
+		timeLeft = 150;
+		score = 0;
+		last =Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		timeText.text = timeLeft.ToString ();
+
+		if (Time.time > last + delay) {
+			last = Time.time;
+			timeLeft--;
+
+		}
 	}
+
+
    public void exitpressed()
     {
        
@@ -36,7 +51,8 @@ public class UIscript : MonoBehaviour {
 
 		GameObject cur_car =  Camera.main.GetComponent<TouchToControl>().lastTouchedCarRef();//FindObjectOfType<instantiatecars>().getcurrentcar();
        cur_car.GetComponent<CarUserControl>().enabled = false;
-       
+
+		carhealth.gameObject.SetActive (false);
        exit.gameObject.SetActive(false);
         cam.transform.position = new Vector3(40, 15, -97);
         cam.transform.eulerAngles = new Vector3(90, 90, 0);
@@ -59,6 +75,7 @@ public class UIscript : MonoBehaviour {
 	}
 	public void Dropoff(){
 		exit1.gameObject.SetActive(false);
+		carhealth.gameObject.SetActive (false);
 		GameObject.Find("Main Camera").GetComponent<followplayer>().enabled = false;
 		GameObject.Find("Main Camera").GetComponent<TouchToControl>().enabled = true;
 		GameObject cur_car =  Camera.main.GetComponent<TouchToControl>().lastTouchedCarRef();
@@ -69,7 +86,8 @@ public class UIscript : MonoBehaviour {
         Destroy (cur_car);
 		start.gameObject.SetActive(true);
 		plot.gameObject.SetActive(true);
-
+		score++;
+		scoreText.text = score.ToString ();
 	}
 
 	public void gotoplot(){
