@@ -14,22 +14,14 @@ public class healthCollider : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
-		print ("hfdsf");
-	}
-	void OnTriggerExit(Collider other)
-	{
-		print ("hfdsf");
-	}
-
-	void OnCollisionExit(Collision other)
-	{
-		print ("hfdsf");
-	}
+	
 	void OnCollisionEnter(Collision other)
 	{
 		print("collision enter");
-		transform.parent.parent.gameObject.GetComponent<noplate> ().dechealth (10);
+        if (other.gameObject.tag == "car")
+        {
+            other.gameObject.GetComponent<noplate>().dechealth(5);
+        }
+        
 	}
 }

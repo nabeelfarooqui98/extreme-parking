@@ -8,7 +8,10 @@ public class noplate : MonoBehaviour {
 	int health=100;
 
 	public Text healthText;
-
+    void Start()
+    {
+        healthText = GameObject.Find("Health").GetComponent<Text>();
+    }
     public void setNum(int n)
     {
         myNum = n;
